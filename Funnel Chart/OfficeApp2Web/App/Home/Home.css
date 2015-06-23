@@ -1,0 +1,163 @@
+﻿/* Page-specific styling */
+
+#content-main {
+    bottom: 0; /* No footer.  Content should take up all available space*/
+}
+
+#settings-button {
+    background-image: url("../../Images/Settings.png");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+}
+
+#topRow {
+    height: 45px;
+    margin-bottom: 20px;
+}
+
+.notice {
+    padding: 10px 10px 25px 10px;
+    border: 2px solid black;
+}
+
+#menuContainer {
+    float: right;
+    /*margin-right: 18px;*/
+    height: 0px; /*Causes menu flyout to overlap chart content rather than push it down*/
+}
+
+/*Menu button*/
+a.menu {
+    font-size: 20pt;
+    float: right;
+    display: block;
+    text-align: center;
+    background: #5970B2;
+    padding: 4px 10px;
+    margin: 0 1px 0 0;
+    color: #FFF;
+    width: 60px;
+    /*position: absolute;
+    right: 18px;*/
+}
+
+    a.menu:hover {
+        background: #49A3FF;
+    }
+
+/*WHAT IS CAUSING ONE TO BE A FEW PIXELS ABOVE THE OTHER?*/
+button.menu{
+    margin-top: 10px;
+    width: 73px;
+}
+
+.submenu {
+    /*background: #EAEBD8;*/
+    background: white;
+    border-left: 1px solid #5970B2;
+    border-right: 1px solid #5970B2;
+    border-top: 1px solid #5970B2;
+    display: none;
+    position: absolute;
+    width: 148px;
+    margin-top: -5px;
+}
+
+    /*Each menu option*/
+    .submenu a {
+        display: block;
+        border-bottom: 1px solid #5970B2;
+        padding: 5px;
+        /*color: #2875DE;*/
+    }
+
+        .submenu a:hover {
+            background: #49A3FF;
+            color: #FFF;
+        }
+
+    .submenu .level1{
+
+    }
+
+    .submenu .level0, .submenu .level2, .submenu .level3, .submenu .level4{
+        display: none;
+    }
+
+/*Flyout styles*/
+.flyout {
+    border: 1px solid black;
+    width: 148px;
+    margin-top: -5px;
+    background-color: white;
+    /*Make flyout appear on top of chart and other page content*/
+    position: relative;
+    z-index: 1000;
+}
+
+    .flyout .header {
+        border-bottom: 1px solid black;
+        text-align: center;
+        font: 14pt;
+        font-weight: bold;
+    }
+
+    .flyout .body {
+    }
+
+        .flyout .body .settingOption {
+            padding: 5px;
+            border: 1px solid gray;
+            background-color: white;
+            margin: 5px;
+        }
+
+            .flyout .body .settingOption:hover {
+                font-weight: bold;
+                border: 1px solid gray;
+                background: #49A3FF;
+                color: #FFF;
+            }
+
+            .flyout .body .settingOption .colorSwatch {
+                float: left;
+                height: 15px;
+                width: 15px;
+                margin-right: 5px;
+            }
+
+                .flyout .body .settingOption .colorSwatch .subSwatch {
+                    height: 5px;
+                    width: 15px;
+                }
+
+
+
+/*Colors*/
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.green {
+    background-color: green;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.white {
+    background-color: white;
+}
