@@ -10,7 +10,7 @@
     var sampleHeaders = [['Subject', 'Start Date', 'Start Time', 'End Date', 'End Time', 'Location', 'Body', 'Attendees']];
     var sampleRows = [
     ['Soccer Game', '9-5-2015', '2:00 PM', '9-5-2015', '4:00 PM', 'Relay Park', 'First game of the season', ''],
-    ['Jess\'s birthday party', '9-8-2015', '6:00 PM', '9-8-2015', '9:00 PM', '100 Main Street', 'Sweet 16!', ''],
+    ['Jess\'s birthday party', '9-8-2015', '11:00 AM', '9-8-2015', '1:00 PM', '100 Main Street', 'Jess is celebrating her 3rd birthday!', ''],
     ['Date Night', '9/12/2015', '7:00 PM', '9/12/2015', '9:30 PM', 'Movie Theater', '', '']];
 
     // The initialize function must be run each time a new page is loaded
@@ -19,7 +19,7 @@
             app.initialize();
 
             $('#set-sample-data').click(insertSampleData);
-            $('#get-data-from-selection').click(getDataFromSelection);
+            $('#get-data-from-selection').click(getDataFromSelection2);
             $('#create-calendar-events').click(processBindingData);
         });
     };
@@ -30,7 +30,8 @@
             function (result) {
                 if (result.status === Office.AsyncResultStatus.Failed) {
                     if (result.error.message === "The current selection is not compatible with the specified coercion type.") {
-                        app.showNotification('Error:', 'Please format the data as a table, then try again'); //Excel = "Format as Table", Word slightly different
+                        //app.showNotification('Error:', 'Please format the data as a table, then try again'); //Excel = "Format as Table", Word slightly different
+
                     } else {
                         app.showNotification('Error:', result.error.message);
                     }
@@ -48,6 +49,20 @@
                             }
                         }
                     );
+                }
+            }
+        );
+    }
+
+    function getDataFromSelection2() {
+        Office.context.document.bindings.addFromPromptAsync(
+            Office.BindingType.Table, { id: window.bindingID },
+            function (result) {
+                if (result.status === Office.AsyncResultStatus.Succeeded) {
+                    //window.location.href = '../Home/Home.html';
+                    //Successful, do nothing
+                } else {
+                    app.showNotification(result.error.name, result.error.message);
                 }
             }
         );
