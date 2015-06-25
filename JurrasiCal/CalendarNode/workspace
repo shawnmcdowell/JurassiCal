@@ -1,0 +1,346 @@
+<NotepadPlus>
+    <Project name="Calendar">
+        <Folder name="node-tutorial-master">
+            <Folder name="node_modules">
+                <Folder name="node-outlook">
+                    <Folder name="exchange-lib">
+                        <File name="node_modules\node-outlook\exchange-lib\exchange.js" />
+                        <File name="node_modules\node-outlook\exchange-lib\utility.js" />
+                    </Folder>
+                    <Folder name="node_modules">
+                        <Folder name="xmlhttprequest">
+                            <Folder name="lib">
+                                <File name="node_modules\node-outlook\node_modules\xmlhttprequest\lib\XMLHttpRequest.js" />
+                            </Folder>
+                            <File name="node_modules\node-outlook\node_modules\xmlhttprequest\.jshintrc" />
+                            <File name="node_modules\node-outlook\node_modules\xmlhttprequest\.npmignore" />
+                            <File name="node_modules\node-outlook\node_modules\xmlhttprequest\LICENSE" />
+                            <File name="node_modules\node-outlook\node_modules\xmlhttprequest\package.json" />
+                            <File name="node_modules\node-outlook\node_modules\xmlhttprequest\README.md" />
+                        </Folder>
+                    </Folder>
+                    <File name="node_modules\node-outlook\.gitattributes" />
+                    <File name="node_modules\node-outlook\.npmignore" />
+                    <File name="node_modules\node-outlook\index.js" />
+                    <File name="node_modules\node-outlook\LICENSE.TXT" />
+                    <File name="node_modules\node-outlook\package.json" />
+                    <File name="node_modules\node-outlook\README.md" />
+                </Folder>
+                <Folder name="simple-oauth2">
+                    <Folder name="lib">
+                        <Folder name="client">
+                            <File name="node_modules\simple-oauth2\lib\client\access-token.js" />
+                            <File name="node_modules\simple-oauth2\lib\client\auth-code.js" />
+                            <File name="node_modules\simple-oauth2\lib\client\client.js" />
+                            <File name="node_modules\simple-oauth2\lib\client\password.js" />
+                        </Folder>
+                        <File name="node_modules\simple-oauth2\lib\config.js" />
+                        <File name="node_modules\simple-oauth2\lib\core.js" />
+                        <File name="node_modules\simple-oauth2\lib\error.js" />
+                        <File name="node_modules\simple-oauth2\lib\simple-oauth2.js" />
+                    </Folder>
+                    <Folder name="node_modules">
+                        <Folder name="date-utils">
+                            <Folder name="doc">
+                                <Folder name="img">
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\img\glyphicons-halflings-white.png" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\img\glyphicons-halflings.png" />
+                                </Folder>
+                                <Folder name="scripts">
+                                    <Folder name="prettify">
+                                        <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\scripts\prettify\Apache-License-2.0.txt" />
+                                        <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\scripts\prettify\jquery.min.js" />
+                                        <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\scripts\prettify\lang-css.js" />
+                                        <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\scripts\prettify\prettify.js" />
+                                    </Folder>
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\scripts\bootstrap-dropdown.js" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\scripts\bootstrap-tab.js" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\scripts\docstrap.lib.js" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\scripts\linenumber.js" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\scripts\sunlight.js" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\scripts\toc.js" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\scripts\URI.js" />
+                                </Folder>
+                                <Folder name="styles">
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\darkstrap.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\jsdoc-default.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\prettify-jsdoc.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\prettify-tomorrow.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.amelia.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.cerulean.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.cosmo.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.cyborg.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.darkstrap.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.flatly.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.journal.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.readable.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.simplex.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.slate.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.spacelab.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.spruce.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.superhero.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\site.united.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\sunlight.dark.css" />
+                                    <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\styles\sunlight.default.css" />
+                                </Folder>
+                                <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\classes.list.html" />
+                                <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\date-utils.js.html" />
+                                <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\Date.html" />
+                                <File name="node_modules\simple-oauth2\node_modules\date-utils\doc\index.html" />
+                            </Folder>
+                            <Folder name="lib">
+                                <File name="node_modules\simple-oauth2\node_modules\date-utils\lib\date-utils.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\date-utils\lib\date-utils.min.js" />
+                            </Folder>
+                            <Folder name="test">
+                                <File name="node_modules\simple-oauth2\node_modules\date-utils\test\date-format-test.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\date-utils\test\date-new-test.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\date-utils\test\date-parse-test.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\date-utils\test\date-validate-test.js" />
+                            </Folder>
+                            <File name="node_modules\simple-oauth2\node_modules\date-utils\.npmignore" />
+                            <File name="node_modules\simple-oauth2\node_modules\date-utils\.travis.yml" />
+                            <File name="node_modules\simple-oauth2\node_modules\date-utils\bower.json" />
+                            <File name="node_modules\simple-oauth2\node_modules\date-utils\gulpfile.js" />
+                            <File name="node_modules\simple-oauth2\node_modules\date-utils\jsdoc.json" />
+                            <File name="node_modules\simple-oauth2\node_modules\date-utils\LICENSE" />
+                            <File name="node_modules\simple-oauth2\node_modules\date-utils\package.json" />
+                            <File name="node_modules\simple-oauth2\node_modules\date-utils\README.md" />
+                        </Folder>
+                        <Folder name="querystring">
+                            <Folder name="tests">
+                                <File name="node_modules\simple-oauth2\node_modules\querystring\tests\.test-querystring.js.un~" />
+                                <File name="node_modules\simple-oauth2\node_modules\querystring\tests\test-querystring.js" />
+                            </Folder>
+                            <File name="node_modules\simple-oauth2\node_modules\querystring\.History.md.un~" />
+                            <File name="node_modules\simple-oauth2\node_modules\querystring\.package.json.un~" />
+                            <File name="node_modules\simple-oauth2\node_modules\querystring\History.md" />
+                            <File name="node_modules\simple-oauth2\node_modules\querystring\package.json" />
+                            <File name="node_modules\simple-oauth2\node_modules\querystring\querystring.js" />
+                            <File name="node_modules\simple-oauth2\node_modules\querystring\Readme.md" />
+                        </Folder>
+                        <Folder name="request">
+                            <Folder name="node_modules">
+                                <Folder name="form-data">
+                                    <Folder name="lib">
+                                        <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\lib\form_data.js" />
+                                    </Folder>
+                                    <Folder name="node_modules">
+                                        <Folder name="async">
+                                            <Folder name="deps">
+                                                <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\deps\nodeunit.css" />
+                                                <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\deps\nodeunit.js" />
+                                            </Folder>
+                                            <Folder name="dist">
+                                                <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\dist\async.min.js" />
+                                            </Folder>
+                                            <Folder name="lib">
+                                                <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\lib\async.js" />
+                                            </Folder>
+                                            <Folder name="test">
+                                                <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\test\.swp" />
+                                                <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\test\test-async.js" />
+                                                <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\test\test.html" />
+                                            </Folder>
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\.gitmodules" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\async.min.js.gzip" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\index.js" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\LICENSE" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\Makefile" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\nodelint.cfg" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\package.json" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\async\README.md" />
+                                        </Folder>
+                                        <Folder name="combined-stream">
+                                            <Folder name="lib">
+                                                <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\lib\combined_stream.js" />
+                                            </Folder>
+                                            <Folder name="node_modules">
+                                                <Folder name="delayed-stream">
+                                                    <Folder name="lib">
+                                                        <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\lib\delayed_stream.js" />
+                                                    </Folder>
+                                                    <Folder name="test">
+                                                        <Folder name="integration">
+                                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\integration\test-delayed-http-upload.js" />
+                                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\integration\test-delayed-stream-auto-pause.js" />
+                                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\integration\test-delayed-stream-pause.js" />
+                                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\integration\test-delayed-stream.js" />
+                                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\integration\test-handle-source-errors.js" />
+                                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\integration\test-max-data-size.js" />
+                                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\integration\test-pipe-resumes.js" />
+                                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\integration\test-proxy-readable.js" />
+                                                        </Folder>
+                                                        <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\common.js" />
+                                                        <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\run.js" />
+                                                    </Folder>
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\.npmignore" />
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\License" />
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\Makefile" />
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\package.json" />
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\Readme.md" />
+                                                </Folder>
+                                            </Folder>
+                                            <Folder name="test">
+                                                <Folder name="fixture">
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\test\fixture\file1.txt" />
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\test\fixture\file2.txt" />
+                                                </Folder>
+                                                <Folder name="integration">
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\test\integration\test-callback-streams.js" />
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\test\integration\test-data-size.js" />
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\test\integration\test-delayed-streams-and-buffers-and-strings.js" />
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\test\integration\test-delayed-streams.js" />
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\test\integration\test-max-data-size.js" />
+                                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\test\integration\test-unpaused-streams.js" />
+                                                </Folder>
+                                                <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\test\common.js" />
+                                                <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\test\run.js" />
+                                            </Folder>
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\.npmignore" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\License" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\Makefile" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\package.json" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node_modules\combined-stream\Readme.md" />
+                                        </Folder>
+                                    </Folder>
+                                    <Folder name="test">
+                                        <Folder name="fixture">
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\test\fixture\bacon.txt" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\test\fixture\unicycle.jpg" />
+                                        </Folder>
+                                        <Folder name="integration">
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\test\integration\test-form-get-length.js" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\test\integration\test-get-boundary.js" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\test\integration\test-http-response.js" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\test\integration\test-pipe.js" />
+                                            <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\test\integration\test-submit.js" />
+                                        </Folder>
+                                        <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\test\common.js" />
+                                        <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\test\run.js" />
+                                    </Folder>
+                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\.npmignore" />
+                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\Makefile" />
+                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node-form-data.sublime-project" />
+                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\node-form-data.sublime-workspace" />
+                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\package.json" />
+                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\form-data\Readme.md" />
+                                </Folder>
+                                <Folder name="mime">
+                                    <Folder name="types">
+                                        <File name="node_modules\simple-oauth2\node_modules\request\node_modules\mime\types\mime.types" />
+                                        <File name="node_modules\simple-oauth2\node_modules\request\node_modules\mime\types\node.types" />
+                                    </Folder>
+                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\mime\LICENSE" />
+                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\mime\mime.js" />
+                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\mime\package.json" />
+                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\mime\README.md" />
+                                    <File name="node_modules\simple-oauth2\node_modules\request\node_modules\mime\test.js" />
+                                </Folder>
+                            </Folder>
+                            <Folder name="tests">
+                                <Folder name="ssl">
+                                    <Folder name="ca">
+                                        <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\ca\ca.cnf" />
+                                        <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\ca\ca.crl" />
+                                        <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\ca\ca.crt" />
+                                        <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\ca\ca.csr" />
+                                        <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\ca\ca.key" />
+                                        <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\ca\ca.srl" />
+                                        <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\ca\server.cnf" />
+                                        <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\ca\server.crt" />
+                                        <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\ca\server.csr" />
+                                        <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\ca\server.js" />
+                                        <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\ca\server.key" />
+                                    </Folder>
+                                    <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\npm-ca.crt" />
+                                    <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\test.crt" />
+                                    <File name="node_modules\simple-oauth2\node_modules\request\tests\ssl\test.key" />
+                                </Folder>
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\googledoodle.png" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\run.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\server.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\squid.conf" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-body.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-cookie.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-cookiejar.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-defaults.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-errors.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-follow-all-303.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-follow-all.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-form.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-headers.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-httpModule.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-https-strict.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-https.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-oauth.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-params.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-piped-redirect.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-pipes.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-pool.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-protocol-changing-redirect.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-proxy.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-qs.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-redirect.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-s3.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-timeout.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-toJSON.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\test-tunnel.js" />
+                                <File name="node_modules\simple-oauth2\node_modules\request\tests\unicycle.jpg" />
+                            </Folder>
+                            <Folder name="vendor">
+                                <Folder name="cookie">
+                                    <File name="node_modules\simple-oauth2\node_modules\request\vendor\cookie\index.js" />
+                                    <File name="node_modules\simple-oauth2\node_modules\request\vendor\cookie\jar.js" />
+                                </Folder>
+                            </Folder>
+                            <File name="node_modules\simple-oauth2\node_modules\request\aws.js" />
+                            <File name="node_modules\simple-oauth2\node_modules\request\forever.js" />
+                            <File name="node_modules\simple-oauth2\node_modules\request\LICENSE" />
+                            <File name="node_modules\simple-oauth2\node_modules\request\main.js" />
+                            <File name="node_modules\simple-oauth2\node_modules\request\oauth.js" />
+                            <File name="node_modules\simple-oauth2\node_modules\request\package.json" />
+                            <File name="node_modules\simple-oauth2\node_modules\request\README.md" />
+                            <File name="node_modules\simple-oauth2\node_modules\request\tunnel.js" />
+                            <File name="node_modules\simple-oauth2\node_modules\request\uuid.js" />
+                        </Folder>
+                    </Folder>
+                    <Folder name="test">
+                        <Folder name="fixtures">
+                            <File name="node_modules\simple-oauth2\test\fixtures\access_token.json" />
+                        </Folder>
+                        <File name="node_modules\simple-oauth2\test\access_token.js" />
+                        <File name="node_modules\simple-oauth2\test\auth-code.js" />
+                        <File name="node_modules\simple-oauth2\test\client.js" />
+                        <File name="node_modules\simple-oauth2\test\errors.js" />
+                        <File name="node_modules\simple-oauth2\test\mocha.opts" />
+                        <File name="node_modules\simple-oauth2\test\password.js" />
+                    </Folder>
+                    <File name="node_modules\simple-oauth2\.npmignore" />
+                    <File name="node_modules\simple-oauth2\.travis.yml" />
+                    <File name="node_modules\simple-oauth2\CHANGELOG.md" />
+                    <File name="node_modules\simple-oauth2\index.js" />
+                    <File name="node_modules\simple-oauth2\LICENSE.md" />
+                    <File name="node_modules\simple-oauth2\Makefile" />
+                    <File name="node_modules\simple-oauth2\package.json" />
+                    <File name="node_modules\simple-oauth2\README.md" />
+                </Folder>
+            </Folder>
+            <Folder name="readme-images">
+                <File name="readme-images\azure-portal-3.PNG" />
+                <File name="readme-images\azure-sign-in.PNG" />
+                <File name="readme-images\azure-wizard-2.PNG" />
+                <File name="readme-images\azure-wizard1.PNG" />
+                <File name="readme-images\inbox.PNG" />
+            </Folder>
+            <File name=".gitattributes" />
+            <File name=".gitignore" />
+            <File name="authHelper.js" />
+            <File name="index.js" />
+            <File name="LICENSE.TXT" />
+            <File name="README.md" />
+            <File name="router.js" />
+            <File name="server.js" />
+        </Folder>
+    </Project>
+</NotepadPlus>
