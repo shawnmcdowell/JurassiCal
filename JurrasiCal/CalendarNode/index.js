@@ -159,39 +159,45 @@ function createevent(response, request) {
     var outlookClient = new outlook.Microsoft.OutlookServices.Client('https://outlook.office365.com/api/v1.0', 
       authHelper.getAccessTokenFn(token));
     
-    response.writeHead(200, {"Content-Type": "text/html"});
-    response.write('<div><span>Creating event</span></div>');
-    response.write('<table><tr><th>Start</th><th>End</th><th>Subject</th><th>Location</th><th>Attendees</th></tr>');
-    
+    response.writeHead(200, {"Content-Type": "application/json"});   
 
 	var ev = new outlook.Microsoft.OutlookServices.Event();
 	ev.subject = "Test event";
-	//ev.body.contentType = "HTML";
 	var body = new outlook.Microsoft.OutlookServices.ItemBody();
-	body.content = "Test Body";
-	body.contentType = "HTML";
-	//ev.body = body;
-	//ev.start = new Date("6/25/2105 8:00");
+	body.content = "<html><h1>Test Body</h1></html>";
+	body.contentType = outlook.Microsoft.OutlookServices.BodyType.HTML;
+	ev.body = body;
+	var startDate = new Date("6/25/2015 3:00 PM"); 
+	ev.start = startDate.toISOString();
 	//ev.startTimeZone = "Pacific Standard Time";
-	//ev.end = new Date("2014-02-25T19:00:00-08:00");
+	var endDate = new Date("6/25/2015 5:00 PM"); 
+	ev.end = endDate.toISOString();
 	ev.subject = "Test Event";
-	//ev.location = "Test Location";
+	var loc = new outlook.Microsoft.OutlookServices.Location;
+	loc.displayName = "Test Location (1 Microsoft Way, Redmond, WA)";
+	//loc.address = "1 Microsoft Way, Redmond, WA";
+	ev.location = loc;
 	var attendee =  new outlook.Microsoft.OutlookServices.Attendee;
 	var emailAddress =  new outlook.Microsoft.OutlookServices.EmailAddress;
 	emailAddress.address = "shawnmc@awesome.onmicrosoft.com";
 	emailAddress.name = "Shawn Test";
 	attendee.emailAddress = emailAddress;
-	//ev.attendees = attendee;
+	ev.attendees.push(attendee);
+	emailAddress.address = "shawnmc@outlook.com";
+	emailAddress.name = "Shawn Outlook";
+	attendee.emailAddress = emailAddress;
+	ev.attendees.push(attendee);
 
     outlookClient.me.events.addEvent(ev)
     	.then(function (result) {
-    		console.log(JSON.stringify(result));
-			response.write('<P>Success</P>');
-			response.write('</table>');
+			console.log("------------RESULT--------------");
+			var r = new outlook.Microsoft.OutlookServices.Event(result);
+    		console.log(JSON.stringify(r));
+			console.log("------------RESULT--------------");
+			response.write(JSON.stringify(result));
 			response.end();
 			},function (error) {
-			console.log(error);
-			response.write("<p>ERROR: " + JSON.stringify(error) + "</p>");
+			response.write(JSON.stringify(error));
 			response.end()
 		}); 
       
