@@ -7,6 +7,9 @@
     window.bindingID = 'myBinding';
     var binding = null;
 
+    //CALL TO POST REQUEST WITH HARDCODED DATA
+    makePostRequests(null);
+
     var sampleHeaders = [['Subject', 'Start Date', 'Start Time', 'End Date', 'End Time', 'Location', 'Body', 'Attendees']];
     var sampleRows = [
     ['Soccer Game', '9-5-2015', '2:00 PM', '9-5-2015', '4:00 PM', 'Relay Park', 'First game of the season', ''],
@@ -106,5 +109,16 @@
                     app.showNotification('No binding exists');
                 }
             });
+    }
+
+    function makePostRequests(data) {
+        var tempData = JSON.stringify(['Soccer Game', '9-5-2015', '2:00 PM', '9-5-2015', '4:00 PM', 'Relay Park', 'First game of the season', '']);
+        $.post("http://localhost:8010/postrequest", tempData, function (result, status) {
+            if (status === "success") {
+                console.log(result);
+            } else {
+                console.log("something went wrong!");
+            }
+        })
     }
 })();

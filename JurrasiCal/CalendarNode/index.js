@@ -10,6 +10,7 @@ handle["/authorize"] = authorize;
 handle["/mail"] = mail;
 handle["/events"] = events;
 handle["/createevent"] = createevent;
+handle["/postrequest"] = postrequest;
 
 server.start(router.route, handle);
 
@@ -209,5 +210,15 @@ function createevent(response, request) {
     response.write('<p> No token found in cookie!</p>');
     response.end();
   }
+	
+}
+
+function postrequest(response, request) {
+  console.log("REQUEST", request);
+  //console.log("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
+	response.writeHead(200, {"Content-Type": "text/html"});
+    response.write('<p> Made it this far</p>');
+	response.write('<p>'+ JSON.stringify(request) + '</p>');
+    response.end();
 	
 }
