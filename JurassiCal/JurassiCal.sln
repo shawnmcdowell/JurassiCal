@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JurassiCal", "JurassiCal\JurassiCal.csproj", "{E3A01D33-C09F-4CDC-91E1-CE0D7371C523}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JurassiCalWeb", "JurassiCalWeb\JurassiCalWeb.csproj", "{BB892E20-9944-4A5D-9776-35053B8525E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3A01D33-C09F-4CDC-91E1-CE0D7371C523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A01D33-C09F-4CDC-91E1-CE0D7371C523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A01D33-C09F-4CDC-91E1-CE0D7371C523}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E3A01D33-C09F-4CDC-91E1-CE0D7371C523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A01D33-C09F-4CDC-91E1-CE0D7371C523}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A01D33-C09F-4CDC-91E1-CE0D7371C523}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BB892E20-9944-4A5D-9776-35053B8525E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB892E20-9944-4A5D-9776-35053B8525E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB892E20-9944-4A5D-9776-35053B8525E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB892E20-9944-4A5D-9776-35053B8525E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -41,7 +41,9 @@ function tokenReceived(response, error, token) {
   }
   else {
     response.setHeader('Set-Cookie', ['node-tutorial-token =' + token.token.access_token + ';Max-Age=3600']);
-    response.writeHead(302, {'Location': 'http://localhost:8010/events'});
+//    response.writeHead(302, {'Location': 'http://localhost:8010/events'});
+    response.writeHead(302, {'Location': 'http://localhost:63233/app/home/home.html'});
+
     response.end();
   }
 }
