@@ -18,7 +18,11 @@ server.start(router.route, handle);
 function home(response, request) {
   console.log("Request handler 'home' was called.");
   response.writeHead(200, {"Content-Type": "text/html"});
-  response.write('<p>Please <a href="' + authHelper.getAuthUrl() + '">sign in</a> with your Office 365 account.</p>');
+  response.write('<html>');
+  response.write('<div><img src="background-upper.jpg"/></div>');
+  response.write('<link href="Office.css" rel="stylesheet" type="text/css" />');
+  response.write('<body><div><a href="http://fontmeme.com/jurassic-park-font/"><img src="http://fontmeme.com/embed.php?text=JurassiCal&name=Jurassic Park.ttf&size=100&style_color=244F2E" alt="Jurassic Park Font"></a><h2><p>Please <a href="' + authHelper.getAuthUrl() + '">sign in</a> with your Office 365 account.</p></h2></div></body>');
+  response.write('</html>');
   response.end();
 }
 
