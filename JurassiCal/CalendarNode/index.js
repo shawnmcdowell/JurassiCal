@@ -3,6 +3,8 @@ var server = require("./server");
 var router = require("./router");
 var authHelper = require("./authHelper");
 var outlook = require("node-outlook");
+var http = require('http');
+var querystring = require('querystring');
 
 var handle = {};
 handle["/"] = home;
@@ -216,11 +218,28 @@ function createevent(response, request) {
 }
 
 function postrequest(response, request) {
-  console.log("REQUEST", request);
-  //console.log("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
-	response.writeHead(200, {"Content-Type": "text/html"});
-    response.write('<p> Made it this far</p>');
-	response.write('<p>'+ JSON.stringify(request) + '</p>');
-    response.end();
-	
+    var queryData = "";
+
+    if(request.method == 'POST') {
+        request.on('data', function(data) {
+            queryData += data;
+            if(queryData.length > 1e6) {
+                queryData = "";
+                response.writeHead(413, {'Content-Type': 'text/plain'}).end();
+                request.connection.destroy();
+            }
+        });
+
+        request.on('end', function() {
+            request.post = querystring.parse(queryData);
+			console.log("done");
+			console.log(JSON.stringify(queryData));
+			response.writeHead(200, {'Content-Type': 'text/plain'});
+			response.write("Success");
+        });
+
+    } else {
+        response.writeHead(405, {'Content-Type': 'text/plain'});
+        response.end();
+    }	
 }

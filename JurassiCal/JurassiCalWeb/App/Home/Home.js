@@ -115,7 +115,7 @@
     }
 
     function makePostRequests(data) {
-        var tempData = JSON.stringify(['Soccer Game', '9-5-2015', '2:00 PM', '9-5-2015', '4:00 PM', 'Relay Park', 'First game of the season', '']);
+        var tempData = {Subject: 'Soccer Game', Start : '6/26/2015 2:00 PM', End : '6/26/2015 2:00 PM', Location: 'Soccer field #3', Attendees: ['shawnmc@microsoft.com', 'shawnmc@outlook.com']};
         $.post("http://localhost:8010/postrequest", tempData, function (result, status) {
             if (status === "success") {
                 console.log(result);
