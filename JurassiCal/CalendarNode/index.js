@@ -4,7 +4,6 @@ var router = require("./router");
 var authHelper = require("./authHelper");
 var outlook = require("node-outlook");
 var http = require('http');
-var querystring = require('querystring');
 
 var handle = {};
 handle["/"] = home;
@@ -160,52 +159,36 @@ function createevent(response, request) {
     end = end === -1 ? cookie.length : end;
     var token = cookie.substring(start, end);
     console.log("Token found in cookie: " + token);
+
     
     var outlookClient = new outlook.Microsoft.OutlookServices.Client('https://outlook.office365.com/api/v1.0', 
       authHelper.getAccessTokenFn(token));
     
-    response.writeHead(200, {"Content-Type": "application/json"});   
 
-	var ev = new outlook.Microsoft.OutlookServices.Event();
-	ev.subject = "Test event";
-	var body = new outlook.Microsoft.OutlookServices.ItemBody();
-	body.content = "<html><h1>Test Body</h1></html>";
-	body.contentType = outlook.Microsoft.OutlookServices.BodyType.HTML;
-	ev.body = body;
-	var startDate = new Date("6/25/2015 3:00 PM"); 
-	ev.start = startDate.toISOString();
-	//ev.startTimeZone = "Pacific Standard Time";
-	var endDate = new Date("6/25/2015 5:00 PM"); 
-	ev.end = endDate.toISOString();
-	ev.subject = "Test Event";
-	var loc = new outlook.Microsoft.OutlookServices.Location;
-	loc.displayName = "Test Location (1 Microsoft Way, Redmond, WA)";
-	//loc.address = "1 Microsoft Way, Redmond, WA";
-	ev.location = loc;
-	var attendee =  new outlook.Microsoft.OutlookServices.Attendee;
-	var emailAddress =  new outlook.Microsoft.OutlookServices.EmailAddress;
-	emailAddress.address = "shawnmc@awesome.onmicrosoft.com";
-	emailAddress.name = "Shawn Test";
-	attendee.emailAddress = emailAddress;
-	ev.attendees.push(attendee);
-	emailAddress.address = "shawnmc@outlook.com";
-	emailAddress.name = "Shawn Outlook";
-	attendee.emailAddress = emailAddress;
-	ev.attendees.push(attendee);
+	//Deal with POST to create
+	
+    var bodyData = "";
+    if(request.method == 'POST') {
+        request.on('data', function(data) {
+            bodyData += data;
+            if(bodyData.length > 1e6) {
+                bodyData = "";
+                response.writeHead(413, {'Content-Type': 'text/plain'}).end();
+                request.connection.destroy();
+            }
+        });
 
-    outlookClient.me.events.addEvent(ev)
-    	.then(function (result) {
-			console.log("------------RESULT--------------");
-			var r = new outlook.Microsoft.OutlookServices.Event(result);
-    		console.log(JSON.stringify(r));
-			console.log("------------RESULT--------------");
-			response.write(JSON.stringify(result));
-			response.end();
-			},function (error) {
-			response.write(JSON.stringify(error));
-			response.end()
-		}); 
-      
+        request.on('end', function() {
+            var params = request.post = JSON.parse(bodyData);
+			console.log("done");
+			console.log(bodyData);
+			_createOutlookEvent(outlookClient, params, response);
+        });
+
+    } else {
+        response.writeHead(405, {'Content-Type': 'text/plain'});
+        response.end();
+    }	
       
 
   }
@@ -217,23 +200,85 @@ function createevent(response, request) {
 	
 }
 
+function _createOutlookEvent(outlookClient, params, response) {
+	var ev = new outlook.Microsoft.OutlookServices.Event();
+	
+	////Add the event fields to an object
+	//Subject
+	ev.subject = params.Subject;
+	
+	//Body
+	var body = new outlook.Microsoft.OutlookServices.ItemBody();
+	body.content = params.Body
+	body.contentType = outlook.Microsoft.OutlookServices.BodyType.HTML;
+	ev.body = body;
+	
+	//Start
+	var startDate = new Date(params.Start); 
+	ev.start = startDate.toISOString();
+	//NYI: ev.startTimeZone = "Pacific Standard Time";
+	
+	//End
+	var endDate = new Date(params.End); 
+	ev.end = endDate.toISOString();
+	//NYI: ev.endTimeZone = "Pacific Standard Time";
+	
+	//Location
+	var loc = new outlook.Microsoft.OutlookServices.Location;
+	loc.displayName = params.Location;
+	//NYI: loc.address = "1 Microsoft Way, Redmond, WA";
+	ev.location = loc;
+	
+	//Attendees
+	params.Attendees.forEach(function(attendeeToAdd){
+		//set emailAddress object
+		var emailAddress =  new outlook.Microsoft.OutlookServices.EmailAddress;
+		emailAddress.address = attendeeToAdd.Address;
+		//emailAddress.name = attendeeToAdd.Address;		//NYI: add the Name value to JSON object
+		
+		//set attendee parent object
+		var attendee =  new outlook.Microsoft.OutlookServices.Attendee;
+		attendee.emailAddress = emailAddress;
+		
+		//append each attendee object to the attendees object
+		ev.attendees.push(attendee);		
+	});
+
+	//Make the call to add a calendar event
+    outlookClient.me.events.addEvent(ev)
+    	.then(function (result) {
+			console.log("------------RESULT--------------");
+			var r = new outlook.Microsoft.OutlookServices.Event(result);
+		    response.writeHead(200, {"Content-Type": "text/html"});
+    		console.log(JSON.stringify(r));
+			console.log("------------RESULT--------------");
+			response.write(JSON.stringify(result));
+			response.end();
+			},function (error) {
+			response.writeHead(500, {"Content-Type": "text/html"});
+			response.write(JSON.stringify(error));
+			response.end()
+		}); 
+
+}
+
 function postrequest(response, request) {
-    var queryData = "";
+    var bodyData = "";
 
     if(request.method == 'POST') {
         request.on('data', function(data) {
-            queryData += data;
-            if(queryData.length > 1e6) {
-                queryData = "";
+            bodyData += data;
+            if(bodyData.length > 1e6) {
+                bodyData = "";
                 response.writeHead(413, {'Content-Type': 'text/plain'}).end();
                 request.connection.destroy();
             }
         });
 
         request.on('end', function() {
-            request.post = querystring.parse(queryData);
+            request.post = querystring.parse(bodyData);
 			console.log("done");
-			console.log(JSON.stringify(queryData));
+			console.log(bodyData);
 			response.writeHead(200, {'Content-Type': 'text/plain'});
 			response.write("Success");
         });

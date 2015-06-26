@@ -8,11 +8,11 @@
     var binding = null;
 
     //CALL TO POST REQUEST WITH HARDCODED DATA
-    var sampleHeaders = [['Subject', 'Start Date', 'Start Time', 'End Date', 'End Time', 'Location', 'Body', 'Attendees']];
+    var sampleHeaders = [['Subject', 'Start', 'End', 'Location', 'Body', 'Attendees']];
     var sampleRows = [
-    ['Soccer Game', '9-5-2015', '2:00 PM', '9-5-2015', '4:00 PM', 'Relay Park', 'First game of the season', ''],
-    ['Jess\'s birthday party', '9-8-2015', '11:00 AM', '9-8-2015', '1:00 PM', '100 Main Street', 'Jess is celebrating her 3rd birthday!', ''],
-    ['Date Night', '9/12/2015', '7:00 PM', '9/12/2015', '9:30 PM', 'Movie Theater', '', '']];
+    ['Soccer Game', '6/26/2015 8:00 AM', '6/26/2015 9:00 AM', 'Relay Park', 'First game of the season', 'shawnmc@microsoft.com;shawnmc@outlook.com'],
+    ['Jess\'s birthday party', '6/26/2015 9:00 AM', '6/26/2015 10:00 AM', '100 Main Street', 'Jess is celebrating her 3rd birthday!', 'shawnmc@microsoft.com;shawnmc@outlook.com'],
+    ['Date Night', '6/26/2015 7:00 PM', '6/26/2015 10:00 PM', 'Issaquah Regal Cinemas/The Ram', 'Jurassic World', 'shawnmc@microsoft.com;shawnmc@outlook.com']];
 
     // The initialize function must be run each time a new page is loaded
     Office.initialize = function (reason) {
@@ -20,18 +20,13 @@
             app.initialize();
 
             $('#set-sample-data').click(insertSampleData);
-            $('#get-data-from-selection').click(getDataFromSelection);
+            $('#get-data-from-selection').click(addFromSelection);
             $('#create-calendar-events').click(processBindingData);
         });
     };
 
     // Reads data from current table selection and displays a notification
     function getDataFromSelection() {
-        makePostRequests(null);
-
-
-        return;
-
         Office.context.document.getSelectedDataAsync(Office.CoercionType.Table,
             function (result) {
                 if (result.status === Office.AsyncResultStatus.Failed) {
@@ -60,7 +55,7 @@
         );
     }
 
-    function getDataFromSelection2() {
+    function addFromSelection() {
         Office.context.document.bindings.addFromPromptAsync(
             Office.BindingType.Table, { id: window.bindingID },
             function (result) {
@@ -108,20 +103,60 @@
                 if (result.status === Office.AsyncResultStatus.Succeeded) {
                     binding = result.value;
                     console.log("process binding data", binding);
+                    binding.getDataAsync({valueFormat: Office.ValueFormat.Formatted}, function(result){
+                        var header = result.value.headers[0];
+                        var rows = result.value.rows;
+                        rows.forEach(function (row, rowIndex) {
+                            var jsonEvent = "{";
+                            header.forEach(function (col, colIndex) {
+                                console.log(col, row[colIndex]);
+                                switch (col) {
+                                    case "Attendees":
+                                        var attendees = row[colIndex].split(";");
+                                        jsonEvent += '"Attendees": [';
+                                        attendees.forEach(function (attendee, attendeeIndex) {
+                                            jsonEvent += '{"Address": "' + attendee + '"}'
+                                            jsonEvent += attendeeIndex < attendees.length-1 ? ',' : ""
+                                        });
+                                        jsonEvent += ']';
+                                        break;
+                                    case "End":
+                                    case "Start":
+                                        jsonEvent += '"' + col + '": "' + new Date(row[colIndex]) + '"';
+                                        break;
+                                    default:
+                                        //{ "Subject": "Soccer Game", "Start": "6/26/2015 10:00 AM", "End": "6/26/2015 12:00 PM", "Location": "Soccer field #3", "Attendees": [{ Address: "shawnmc@microsoft.com" }, { Address: "shawnmc@outlook.com" }], "Body": "<html><p>Today we are playing the ManU.  We are vistors.</p></html>" };
+                                        jsonEvent += '"' + col + '": "'+ row[colIndex] +'"';
+                                }
+                                jsonEvent +=  colIndex < header.length-1  ? ',' : ""
+                            });
+                            jsonEvent += "}";
+
+                            //Call the service to create the event
+                            $.post("http://localhost:8010/createevent", jsonEvent, function (result, status) {
+                                if (status === "success") {
+                                    console.log(result);
+                                    app.showNotification("Event Creation Succeeded for " + JSON.parse(jsonEvent).Subject);
+                                } else {
+                                    console.log("something went wrong!");
+                                }
+                            }, "json");
+                        });
+                    });
                 } else {
                     app.showNotification('No binding exists');
                 }
             });
     }
 
-    function makePostRequests(data) {
-        var tempData = {Subject: 'Soccer Game', Start : '6/26/2015 2:00 PM', End : '6/26/2015 2:00 PM', Location: 'Soccer field #3', Attendees: ['shawnmc@microsoft.com', 'shawnmc@outlook.com']};
-        $.post("http://localhost:8010/postrequest", tempData, function (result, status) {
+    function makeSamplePostRequests(data) {
+        var tempData = { "Subject": "Soccer Game", "Start": "6/26/2015 10:00 AM", "End": "6/26/2015 12:00 PM", "Location": "Soccer field #3", "Attendees": [{ Address: "shawnmc@microsoft.com" }, { Address: "shawnmc@outlook.com" }], "Body": "<html><p>Today we are playing the ManU.  We are vistors.</p></html>" };
+        $.post("http://localhost:8010/createevent", JSON.stringify(tempData), function (result, status) {
             if (status === "success") {
                 console.log(result);
             } else {
                 console.log("something went wrong!");
             }
-        })
+        }, "json");
     }
 })();
