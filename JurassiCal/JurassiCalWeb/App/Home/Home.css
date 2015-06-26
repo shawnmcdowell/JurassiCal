@@ -1,2 +1,28 @@
 ﻿/* Page-specific styling */
+.card{
+    border: 2px black solid;
+    margin-top: 5px;
+}
+
+.card .header{
+    text-align: center;
+    font-size: 12pt;
+}
+
+.card .subcard{
+    padding-left: 5px;
+}
+
+.card .subcard .label{
+    padding-top: 3px;
+    padding-right: 5px;
+    float: left;
+}
+
+.card .subcard .labelText{
+}
+
+.button {
+    width: 100px;
+}
 
