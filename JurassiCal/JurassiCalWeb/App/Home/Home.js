@@ -74,7 +74,8 @@
         var sampleData = new Office.TableData(
             sampleRows, sampleHeaders);
         //Insert sample data
-        Office.context.document.setSelectedDataAsync(sampleData,  
+        Office.context.document.setSelectedDataAsync(sampleData,
+            {cellFormat: [{ cells: Office.Table.All, format: { width: "auto fit" } }]},
             function (asyncResult) {
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                     app.showNotification('Could not insert sample data', 'Please choose a different selection range.');
@@ -87,6 +88,14 @@
                                 app.showNotification('Error binding data');
                             } else {
                                 //Successful
+                                //setup data changed handler
+                                asyncResult.value.addHandlerAsync(Office.EventType.BindingDataChanged, function (result)
+                                {
+                                    //refresh cards when data changes
+                                    processBindingData();
+
+                                });
+                                //force cards to be set
                                 processBindingData();
 
                             }
@@ -111,7 +120,6 @@
                             //get the json to post
                             var json = buildEventJSON(result.value, rowIndex);
                             makeEventCard(JSON.parse(json));
-                            //callEventService(jsonEvent);
                         });
                     });                    
                 } else {
