@@ -427,13 +427,25 @@
     <Content Include="CalendarNode\node_modules\simple-oauth2\test\client.js" />
     <Content Include="CalendarNode\node_modules\simple-oauth2\test\errors.js" />
     <Content Include="CalendarNode\node_modules\simple-oauth2\test\password.js" />
-    <Content Include="CalendarNode\readme-images\azure-portal-3.PNG" />
-    <Content Include="CalendarNode\readme-images\azure-sign-in.PNG" />
-    <Content Include="CalendarNode\readme-images\azure-wizard-2.PNG" />
-    <Content Include="CalendarNode\readme-images\azure-wizard1.PNG" />
-    <Content Include="CalendarNode\readme-images\inbox.PNG" />
+    <Content Include="CalendarNode\readme-images\azure-portal-3.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CalendarNode\readme-images\azure-sign-in.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CalendarNode\readme-images\azure-wizard-2.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CalendarNode\readme-images\azure-wizard1.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CalendarNode\readme-images\inbox.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="CalendarNode\README.md" />
-    <Content Include="CalendarNode\workspace" />
+    <Content Include="CalendarNode\workspace">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="CalendarNode\node_modules\node-outlook\.gitattributes" />
     <Content Include="CalendarNode\node_modules\node-outlook\.npmignore" />
     <Content Include="CalendarNode\node_modules\node-outlook\node_modules\.bin\uuid" />
@@ -835,14 +847,28 @@
     <Content Include="App\Home\Home.css" />
     <Content Include="App\Home\Home.html" />
     <Content Include="App\Home\Home.js" />
-    <Content Include="CalendarNode\authHelper.js" />
-    <Content Include="CalendarNode\background-upper.jpg" />
-    <Content Include="CalendarNode\background.jpg" />
-    <Content Include="CalendarNode\index.js" />
+    <Content Include="CalendarNode\authHelper.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CalendarNode\background-upper.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CalendarNode\background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CalendarNode\index.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="CalendarNode\LICENSE.TXT" />
-    <Content Include="CalendarNode\Office.css" />
-    <Content Include="CalendarNode\router.js" />
-    <Content Include="CalendarNode\server.js" />
+    <Content Include="CalendarNode\Office.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CalendarNode\router.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CalendarNode\server.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Office.css" />
     <Content Include="Images\Close.png" />
     <Content Include="packages.config" />
