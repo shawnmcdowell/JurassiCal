@@ -114,6 +114,8 @@
                 if (result.status === Office.AsyncResultStatus.Succeeded) {
                     binding = result.value;
                     console.log("process binding data", binding);
+                    //clear containing div
+                    $("container").html("");
                     binding.getDataAsync({valueFormat: Office.ValueFormat.Formatted}, function(result){
 
                         result.value.rows.forEach(function (row, rowIndex) {
